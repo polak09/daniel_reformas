@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #242421;
+  --color-stone: #676860;
+  --color-cream: #f7f5ef;
+  --color-sand: #ebe7dd;
+  --color-clay: #c55531;
+  --color-clay-dark: #a64024;
+  --font-sans: "Plus Jakarta Sans", "Arial", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-clay text-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-space {
+    @apply py-18 sm:py-24 lg:py-30;
+  }
+
+  .eyebrow {
+    @apply mb-4 flex items-center gap-3 text-xs font-bold tracking-[0.18em] text-clay uppercase;
+  }
+
+  .eyebrow::before {
+    @apply h-px w-7 bg-clay content-[''];
+  }
+
+  .section-title {
+    @apply max-w-2xl text-3xl leading-[1.05] font-bold tracking-[-0.04em] sm:text-5xl;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-clay px-6 text-sm font-bold text-white transition hover:bg-clay-dark focus-visible:ring-3 focus-visible:ring-clay/35 focus-visible:ring-offset-2 focus-visible:outline-none;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-ink/20 bg-white px-6 text-sm font-bold text-ink transition hover:border-ink hover:bg-sand focus-visible:ring-3 focus-visible:ring-clay/35 focus-visible:ring-offset-2 focus-visible:outline-none;
+  }
+}
