@@ -31,8 +31,8 @@ const services = [
 
 const reasons = [
   ['+10', 'años de experiencia'],
-  ['01', 'profesional, trato directo'],
-  ['✓', 'presupuesto sin compromiso'],
+  ['REAL', 'No te intento vender la moto'],
+  ['+30', 'clientes satisfechos'],
 ]
 
 const steps = [
@@ -43,11 +43,19 @@ const steps = [
 ]
 
 function WhatsAppIcon() {
-  return <span aria-hidden="true" className="text-lg leading-none">◔</span>
+  return <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+        </svg>
+
 }
 
 function PhoneIcon() {
-  return <span aria-hidden="true" className="text-base leading-none">⌕</span>
+  return <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path fill="currentColor" d="m19.23 15.26l-2.54-.29a1.99 1.99 0 0 0-1.64.57l-1.84 1.84a15.05 15.05 0 0 1-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52a2 2 0 0 0-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07c.53 8.54 7.36 15.36 15.89 15.89c1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98" />
+        </svg>
+
 }
 
 function App() {
@@ -76,7 +84,7 @@ function App() {
             <div className="flex max-w-2xl flex-col justify-center">
               <p className="eyebrow">Alhama de Murcia y alrededores</p>
               <h1 className="text-4xl leading-[0.96] font-black tracking-[-0.035em] sm:text-6xl lg:text-7xl">Reformas para viviendas y negocios.</h1>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-stone sm:text-xl">Soy Daniel, profesional con +10 años de experiencia en de reformas y trabajos para viviendas y negocios. Trato directo, materiales gestionados personalmente y presupuesto sin compromiso.</p>
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-stone sm:text-xl">Soy Daniel, profesional con +10 años de experiencia en de reformas y trabajos para viviendas y negocios. <br />Trato directo, materiales gestionados personalmente y presupuesto sin compromiso.</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a className="button-primary" href={contact.whatsappLink} target="_blank" rel="noreferrer"><WhatsAppIcon /> Hablar por WhatsApp</a>
                 <a className="button-secondary" href={contact.phoneLink}><PhoneIcon /> Llamar ahora</a>
@@ -88,8 +96,7 @@ function App() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,#df744e_0%,transparent_26%),linear-gradient(135deg,#343630_0%,#1e1f1c_65%)]" />
               <div className="absolute right-[-16%] bottom-[-22%] h-75 w-75 rounded-full border-24 border-sand/20 sm:h-115 sm:w-115" />
               <div className="absolute top-[21%] right-[16%] h-22 w-22 rounded-full border border-sand/25 sm:h-32 sm:w-32" />
-              <div className="relative flex h-full flex-col justify-between text-white">
-                <span className="w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold tracking-wider uppercase">Trabajos reales</span>
+              <div className="relative flex h-full flex-col justify-end text-white">
                 <div className="max-w-72">
                   
                   <p className="mt-3 text-2xl leading-tight font-bold sm:text-3xl">Daniel Kucmierz</p>
@@ -127,20 +134,21 @@ function App() {
                 <p className="eyebrow">Trabajos realizados</p>
                 <h2 className="section-title">El resultado se ve en cada detalle.</h2>
               </div>
-              <p className="max-w-sm text-stone">El portfolio se completará con fotografías reales seleccionadas de los trabajos realizados.</p>
             </div>
             <div className="mt-12 grid gap-4 md:grid-cols-12">
               <div className="relative min-h-80 overflow-hidden rounded-2xl bg-ink p-6 text-white md:col-span-7">
                 <div className="absolute inset-0 bg-[linear-gradient(130deg,#242421_0%,#3a3c36_50%,#a84c31_160%)]" />
                 <div className="relative flex h-full flex-col justify-end">
-                  <span className="mb-auto w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-bold">Portfolio real</span>
+                  <span className="mb-auto w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-bold">Instalaciones</span>
                   <h3 className="text-3xl font-bold tracking-tighter">Tus trabajos, en primer plano.</h3>
-                  <p className="mt-2 max-w-sm text-sm text-white/75">Las imágenes definitivas sustituirán estos espacios reservados antes de publicar.</p>
                 </div>
               </div>
               <div className="grid gap-4 md:col-span-5">
-                <div className="min-h-38 rounded-2xl bg-[linear-gradient(135deg,#d9d1c0,#af765e)] p-5"><span className="text-xs font-bold tracking-wider text-ink/70 uppercase">Reformas</span></div>
-                <div className="min-h-38 rounded-2xl bg-[linear-gradient(135deg,#8e9385,#e2d9c6)] p-5"><span className="text-xs font-bold tracking-wider text-ink/70 uppercase">Acabados</span></div>
+                <div className="min-h-38 rounded-2xl bg-[linear-gradient(135deg,#d9d1c0,#af765e)] p-5 text-white">
+                  <span className="mb-auto w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-bold">Instalaciones</span></div>
+                <div className="min-h-38 rounded-2xl bg-[linear-gradient(135deg,#8e9385,#e2d9c6)] p-5 text-white">
+                  <span className="mb-auto w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-bold">Acabados</span>
+                </div>
               </div>
             </div>
           </div>
@@ -208,7 +216,7 @@ function App() {
       <footer className="bg-ink py-9 text-white">
         <div className="container-page flex flex-col gap-5 text-sm sm:flex-row sm:items-center sm:justify-between">
           <p className="font-bold">REFORMAS<span className="text-[#ee9877]">.</span></p>
-          <p className="text-white/60">Alhama de Murcia · Murcia · Lorca y alrededores</p>
+          <p className="text-white/60">Alhama de Murcia · Región de Murcia</p>
           <a className="font-semibold underline-offset-4 hover:underline focus-visible:underline focus-visible:outline-none" href={contact.phoneLink}>{contact.phoneDisplay}</a>
         </div>
       </footer>
