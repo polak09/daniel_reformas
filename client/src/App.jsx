@@ -1,4 +1,5 @@
 import './App.css'
+import Gallery from './components/ImageGallery'
 
 const contact = {
   phoneDisplay: '+34 643 93 26 83',
@@ -32,14 +33,14 @@ const services = [
 const reasons = [
   ['+10', 'años de experiencia'],
   ['REAL', 'No te intento vender la moto'],
-  ['+30', 'clientes satisfechos'],
+  ['+20', 'clientes satisfechos'],
 ]
 
 const steps = [
   ['01', 'Cuéntame qué necesitas', 'Contacta por WhatsApp o teléfono y explícame tu idea.'],
   ['02', 'Valoramos el proyecto', 'Según el trabajo, se acordamos una visita y revisamos lo necesario.'],
   ['03', 'Recibes tu presupuesto', 'Preparo un presupuesto adaptado al trabajo.'],
-  ['04', 'Realizamos la reforma', 'Plasmo tu visión en la realidad.'],
+  ['04', 'Realizo la reforma', 'Plasmo tu visión en la realidad.'],
 ]
 
 function WhatsAppIcon() {
@@ -61,10 +62,11 @@ function PhoneIcon() {
 function App() {
   return (
     <div className="overflow-x-hidden pb-20 md:pb-0">
-      <header className="border-b border-ink/10 bg-cream">
+      <div className="container-page flex min-h-18 items-center justify-between gap-5"></div>
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-cream">
         <div className="container-page flex min-h-18 items-center justify-between gap-5">
           <a href="#inicio" className="text-sm font-black tracking-[-0.04em] focus-visible:ring-3 focus-visible:ring-clay/35 focus-visible:outline-none">
-            REFORMAS<span className="text-clay">.</span>
+          REFORMAS <span className="text-clay">GRUBEK</span>
           </a>
           <nav aria-label="Navegación principal" className="hidden items-center gap-7 text-sm font-semibold text-stone lg:flex">
             <a className="hover:text-ink focus-visible:text-ink focus-visible:outline-none" href="#servicios">Servicios</a>
@@ -73,8 +75,8 @@ function App() {
             <a className="hover:text-ink focus-visible:text-ink focus-visible:outline-none" href="#zona">Zona</a>
           </nav>
           <a className="button-primary min-h-10 px-4 text-xs" href={contact.whatsappLink} target="_blank" rel="noreferrer" aria-label="Hablar por WhatsApp">
-            <WhatsAppIcon /> WhatsApp
-          </a>
+          <WhatsAppIcon /> WhatsApp
+          </a> 
         </div>
       </header>
 
@@ -84,18 +86,15 @@ function App() {
             <div className="flex max-w-2xl flex-col justify-center">
               <p className="eyebrow">Alhama de Murcia y alrededores</p>
               <h1 className="text-4xl leading-[0.96] font-black tracking-[-0.035em] sm:text-6xl lg:text-7xl">Reformas para viviendas y negocios.</h1>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-stone sm:text-xl">Soy Daniel, profesional con +10 años de experiencia en de reformas y trabajos para viviendas y negocios. <br />Trato directo, materiales gestionados personalmente y presupuesto sin compromiso.</p>
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-stone sm:text-xl">Soy Daniel, profesional con +10 años de experiencia realizando reformas e instalaciones. <br />Trato directo, materiales gestionados personalmente y presupuesto sin compromiso.</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a className="button-primary" href={contact.whatsappLink} target="_blank" rel="noreferrer"><WhatsAppIcon /> Hablar por WhatsApp</a>
-                <a className="button-secondary" href={contact.phoneLink}><PhoneIcon /> Llamar ahora</a>
+                <a className="button-primary text-md" href={contact.whatsappLink} target="_blank" rel="noreferrer"><WhatsAppIcon /> Hablar por WhatsApp</a>
+                <a className="button-secondary text-md" href={contact.phoneLink}><PhoneIcon /> Llamar ahora</a>
               </div>
               <p className="mt-8 text-sm font-semibold text-stone">+10 años de experiencia <span className="mx-2 text-clay">•</span> Presupuesto sin compromiso</p>
             </div>
 
             <div className="relative min-h-90 overflow-hidden rounded-3xl bg-ink p-6 sm:min-h-125 lg:min-h-full">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,#df744e_0%,transparent_26%),linear-gradient(135deg,#343630_0%,#1e1f1c_65%)]" />
-              <div className="absolute right-[-16%] bottom-[-22%] h-75 w-75 rounded-full border-24 border-sand/20 sm:h-115 sm:w-115" />
-              <div className="absolute top-[21%] right-[16%] h-22 w-22 rounded-full border border-sand/25 sm:h-32 sm:w-32" />
               <div className="relative flex h-full flex-col justify-end text-white">
                 <div className="max-w-72">
                   
@@ -115,7 +114,7 @@ function App() {
             </div>
             <div className="mt-12 grid overflow-hidden rounded-2xl border border-ink/10 sm:grid-cols-2 lg:grid-cols-4">
               {services.map((service) => (
-                <article key={service.title} className="group min-h-65 border-b border-ink/10 p-6 last:border-b-0 sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(n+3)]:border-b-0 lg:border-r lg:[&:nth-child(2)]:border-r lg:[&:nth-child(3)]:border-r lg:[&:nth-child(4)]:border-r-0">
+                <article key={service.title} className="group min-h-65 border-b border-ink/10 p-6 last:border-b-0 sm:odd:border-r sm:nth-[n+3]:border-b-0 lg:border-r lg:nth-2:border-r lg:nth-3:border-r lg:nth-4:border-r-0">
                   <p className="text-sm font-bold text-clay">{service.number}</p>
                   <h3 className="mt-9 text-2xl font-bold tracking-[-0.04em]">{service.title}</h3>
                   <ul className="mt-5 space-y-2 text-md leading-relaxed text-stone">
@@ -135,22 +134,8 @@ function App() {
                 <h2 className="section-title">El resultado se ve en cada detalle.</h2>
               </div>
             </div>
-            <div className="mt-12 grid gap-4 md:grid-cols-12">
-              <div className="relative min-h-80 overflow-hidden rounded-2xl bg-ink p-6 text-white md:col-span-7">
-                <div className="absolute inset-0 bg-[linear-gradient(130deg,#242421_0%,#3a3c36_50%,#a84c31_160%)]" />
-                <div className="relative flex h-full flex-col justify-end">
-                  <span className="mb-auto w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-bold">Instalaciones</span>
-                  <h3 className="text-3xl font-bold tracking-tighter">Tus trabajos, en primer plano.</h3>
-                </div>
-              </div>
-              <div className="grid gap-4 md:col-span-5">
-                <div className="min-h-38 rounded-2xl bg-[linear-gradient(135deg,#d9d1c0,#af765e)] p-5 text-white">
-                  <span className="mb-auto w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-bold">Instalaciones</span></div>
-                <div className="min-h-38 rounded-2xl bg-[linear-gradient(135deg,#8e9385,#e2d9c6)] p-5 text-white">
-                  <span className="mb-auto w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-bold">Acabados</span>
-                </div>
-              </div>
-            </div>
+            <Gallery />
+            <p className="mt-8 text-sm font-semibold text-stone text-center ">Si quieres ver más trabajos escríbeme <a href={contact.whatsappLink} className="text-clay underline" target="_blank" rel="noopener noreferrer">aquí</a>.</p>
           </div>
         </section>
 
@@ -180,7 +165,7 @@ function App() {
                 <li key={number} className="grid gap-3 py-6 sm:grid-cols-[6rem_1fr_1fr] sm:gap-6 sm:py-8">
                   <span className="font-bold text-clay">{number}</span>
                   <h3 className="text-xl font-bold tracking-[-0.03em]">{title}</h3>
-                  <p className="text-sm leading-relaxed text-stone">{text}</p>
+                  <p className="text-md leading-relaxed text-stone">{text}</p>
                 </li>
               ))}
             </ol>
@@ -195,7 +180,7 @@ function App() {
             </div>
             <div className="rounded-2xl border border-ink/10 bg-cream p-7 sm:p-10">
               <p className="text-xl leading-relaxed font-medium tracking-tight">Trabajo principalmente en <strong>Alhama de Murcia</strong>, puedo desplazarme a Librilla, Totana y localidades cercanas según el tipo de trabajo.</p>
-              <p className="mt-5 text-sm leading-relaxed text-stone">Cuéntame qué necesitas y valoro la disponibilidad para tu zona.</p>
+              <p className="mt-5 text-md leading-relaxed text-stone">Cuéntame qué necesitas y valoro la disponibilidad para tu zona.</p>
             </div>
           </div>
         </section>
@@ -206,8 +191,8 @@ function App() {
             <h2 className="mx-auto mt-5 max-w-3xl text-4xl leading-[1.03] font-bold tracking-[-0.055em] sm:text-6xl">¿Tienes un proyecto en mente?</h2>
             <p className="mx-auto mt-5 max-w-xl text-white/85">Cuéntame qué necesitas y hablamos directamente.</p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-              <a className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-ink transition hover:bg-cream focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-clay focus-visible:outline-none" href={contact.whatsappLink} target="_blank" rel="noreferrer"><WhatsAppIcon /> Escribir por WhatsApp</a>
-              <a className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-white/40 px-6 text-sm font-bold text-white transition hover:bg-white/10 focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-clay focus-visible:outline-none" href={contact.phoneLink}><PhoneIcon /> {contact.phoneDisplay}</a>
+              <a className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-white px-6 text-md font-bold text-ink transition hover:bg-cream focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-clay focus-visible:outline-none" href={contact.whatsappLink} target="_blank" rel="noreferrer"><WhatsAppIcon /> Escribir por WhatsApp</a>
+              <a className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-white/40 px-6 text-md font-bold text-white transition hover:bg-white/10 focus-visible:ring-3 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-clay focus-visible:outline-none" href={contact.phoneLink}><PhoneIcon /> {contact.phoneDisplay}</a>
             </div>
           </div>
         </section>
@@ -215,7 +200,7 @@ function App() {
 
       <footer className="bg-ink py-9 text-white">
         <div className="container-page flex flex-col gap-5 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-bold">REFORMAS<span className="text-[#ee9877]">.</span></p>
+          <p className="font-bold">REFORMAS <span className="text-clay">GRUBEK</span></p>
           <p className="text-white/60">Alhama de Murcia · Región de Murcia</p>
           <a className="font-semibold underline-offset-4 hover:underline focus-visible:underline focus-visible:outline-none" href={contact.phoneLink}>{contact.phoneDisplay}</a>
         </div>
