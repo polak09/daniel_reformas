@@ -1,5 +1,6 @@
 import './App.css'
 import Gallery from './components/ImageGallery'
+import danielImage from "./assets/hero/danie_img.jpeg";
 
 const contact = {
   phoneDisplay: '+34 643 93 26 83',
@@ -71,8 +72,8 @@ function App() {
           <nav aria-label="Navegación principal" className="hidden items-center gap-7 text-sm font-semibold text-stone lg:flex">
             <a className="hover:text-ink focus-visible:text-ink focus-visible:outline-none" href="#servicios">Servicios</a>
             <a className="hover:text-ink focus-visible:text-ink focus-visible:outline-none" href="#trabajos">Trabajos</a>
-            <a className="hover:text-ink focus-visible:text-ink focus-visible:outline-none" href="#proceso">Proceso</a>
             <a className="hover:text-ink focus-visible:text-ink focus-visible:outline-none" href="#zona">Zona</a>
+            <a className="hover:text-ink focus-visible:text-ink focus-visible:outline-none" href="#contacto">Contacto</a>
           </nav>
           <a className="button-primary min-h-10 px-4 text-xs" href={contact.whatsappLink} target="_blank" rel="noreferrer" aria-label="Hablar por WhatsApp">
           <WhatsAppIcon /> WhatsApp
@@ -94,12 +95,17 @@ function App() {
               <p className="mt-8 text-sm font-semibold text-stone">+10 años de experiencia <span className="mx-2 text-clay">•</span> Presupuesto sin compromiso</p>
             </div>
 
-            <div className="relative min-h-90 overflow-hidden rounded-3xl bg-ink p-6 sm:min-h-125 lg:min-h-full">
-              <div className="relative flex h-full flex-col justify-end text-white">
-                <div className="max-w-72">
+            <div className="relative min-h-90 overflow-hidden rounded-3xl p-6 sm:min-h-125 lg:min-h-full max-w-xl lg:max-w-full">
+              <img
+              src={danielImage}
+              alt="Daniel Kucmierz"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+              <div className="relative flex h-full flex-col justify-end text-black">
+                <div className="max-w-72 rounded-full bg-white/20 backdrop-blur-lg px-6 py-2">
                   
-                  <p className="mt-3 text-2xl leading-tight font-bold sm:text-3xl">Daniel Kucmierz</p>
-                  <p className="text-xs font-bold tracking-[0.18em] text-sand uppercase">Profesional de reformas</p>
+                  <p className="text-2xl leading-tight font-bold sm:text-3xl">Daniel Kucmierz</p>
+                  <p className="text-xs font-bold tracking-[0.18em] text-ink uppercase">Profesional de reformas</p>
                 </div>
               </div>
             </div>
@@ -185,7 +191,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section-space bg-clay text-white">
+        <section id="contacto" className="section-space bg-clay text-white">
           <div className="container-page text-center">
             <p className="mx-auto w-fit text-xs font-bold tracking-[0.18em] uppercase">Presupuesto sin compromiso</p>
             <h2 className="mx-auto mt-5 max-w-3xl text-4xl leading-[1.03] font-bold tracking-[-0.055em] sm:text-6xl">¿Tienes un proyecto en mente?</h2>
